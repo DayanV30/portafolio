@@ -2,7 +2,7 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
-    padding: 0% 5%;
+    padding: 0 5%;
     background-color: #f4f4f4;
     color: #333;
 }
@@ -37,8 +37,9 @@ img {
 
 .img-texto {
     display: flex;
+    flex-direction: column; /* Cambio para dispositivos móviles */
     align-items: center;
-    gap: 20px; /* Espacio entre la imagen y el texto */
+    gap: 20px;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -79,6 +80,44 @@ ol li:hover {
     cursor: pointer;
 }
 
-a{
+a {
     color: aliceblue;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    body {
+        padding: 0 2%;
+    }
+
+    .img-texto {
+        flex-direction: column; /* Cambia la dirección de los elementos internos */
+    }
+
+    p {
+        margin: 0 10px;
+    }
+
+    .mis-proyectos {
+        padding: 1% 2%;
+    }
+
+    div {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1, h2 {
+        font-size: 18px; /* Disminuye el tamaño del texto para pantallas pequeñas */
+    }
+
+    img {
+        width: 120px; /* Hace la imagen más pequeña */
+        height: 120px;
+    }
+
+    .img-texto {
+        gap: 10px;
+    }
 }
